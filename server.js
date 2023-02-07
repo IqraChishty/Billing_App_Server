@@ -14,6 +14,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Billing app live");
+});
+
 app.use("/api/auth", authRouter);
 app.use("/api/slab", slabRouter);
 app.use("/api/rate", rateRouter);
